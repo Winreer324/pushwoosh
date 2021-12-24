@@ -11,7 +11,7 @@ import com.pushwoosh.notification.PushMessage;
 import org.json.JSONException;
 
 public class PushwooshNotificationServiceExtension extends NotificationServiceExtension {
-    private String TAG = "PushwooshNotificationServiceExtension";
+    private final String TAG = "PushwooshNotificationServiceExtension";
     private boolean showForegroundPush = false;
 
     public PushwooshNotificationServiceExtension() {
