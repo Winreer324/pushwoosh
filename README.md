@@ -1,7 +1,40 @@
+## Installation
+
+1) Install the library from pub:
+
+```yaml
+dependencies:
+  pushwoosh: '^2.2.1'
+```
+
+2) Configure Firebase Android project in [Firebase console](https://console.firebase.google.com).
+
+3) Place a google-services.json file into android/app folder in your project directory.
+
+## Usage
+
+```dart
+import 'package:pushwoosh/pushwoosh.dart';
+...
+Pushwoosh.initialize({"app_id": "YOUR_APP_ID", "sender_id": "FCM_SENDER_ID"});
+Pushwoosh.getInstance.onPushReceived.listen((event) {
+...
+});
+Pushwoosh.getInstance.onPushAccepted.listen((event) {
+...
+});
+Pushwoosh.getInstance.registerForPushNotifications();
+```
+
+## Guide
+
+https://www.pushwoosh.com/docs/flutter-plugin-integration
+
+
 Pushwoosh Flutter Plugin
 ===================================================
 
-[![GitHub release](https://img.shields.io/github/release/Pushwoosh/pushwoosh-flutter.svg)](https://github.com/Pushwoosh/pushwoosh-flutter/releases) 
+[![GitHub release](https://img.shields.io/github/release/Pushwoosh/pushwoosh-flutter.svg)](https://github.com/Pushwoosh/pushwoosh-flutter/releases)
 
 [![Pub](https://img.shields.io/pub/v/pushwoosh.svg)](https://pub.dartlang.org/packages/pushwoosh)
 
@@ -12,7 +45,7 @@ Pushwoosh Flutter Plugin
 https://www.pushwoosh.com/platform-docs/pushwoosh-sdk/cross-platform-frameworks/flutter
 
 
-### Important 
+### Important
 ### Migrating Pushwoosh Flutter Plugin to version 2.1.0 or higher
 
 If you are facing errors building your Android application after updating Pushwoosh Flutter Plugin to version 2.1.0 or higher, please follow this guide
@@ -51,7 +84,7 @@ Update gradle plugin in your project. To do this, open **PROJECT_DIR/build.gradl
 In **PROJECT_DIR/gradle/wrapper/gradle-wrapper.properties** update gradle wrapper version:
 ```distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip```
 
-#### After updating gradle plugin to version 4 or higher you may also face known build error https://issuetracker.google.com/issues/158753935?pli=1 
+#### After updating gradle plugin to version 4 or higher you may also face known build error https://issuetracker.google.com/issues/158753935?pli=1
 ```
 Transform's input file does not exist: /build/app/intermediates/flutter/debug/libs.jar.
 ```
